@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="0" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.clinicmanagementsystem.controller.MainController"
+      stylesheets="@style.css">
+
+    <Label text="Clinic Management System" styleClass="header-text" style="-fx-padding: 20 0 20 0;"/>
+
+    <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <Tab text="Patients">
+            <fx:include source="patient-view.fxml" fx:id="patientView"/>
+        </Tab>
+
+        <Tab text="Doctors">
+            <fx:include source="doctor-view.fxml" fx:id="doctorView"/>
+        </Tab>
+
+        <Tab text="Appointments">
+            <fx:include source="appointment-view.fxml" fx:id="appointmentView"/>
+        </Tab>
+    </TabPane>
+</VBox>

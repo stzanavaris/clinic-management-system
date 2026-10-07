@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" styleClass="vbox-container" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.clinicmanagementsystem.controller.PatientController">
+    <HBox spacing="15">
+        <VBox spacing="10" styleClass="card" HBox.hgrow="ALWAYS">
+            <Label text="Patient Registration" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="pNameField" promptText="Full Name"/>
+            <TextField fx:id="pAgeField" promptText="Age"/>
+            <TextField fx:id="pPhoneField" promptText="Phone"/>
+            <HBox spacing="10">
+                <Button text="Save New" onAction="#handleAddPatient" styleClass="button"/>
+                <Button text="Update Selected" onAction="#handleUpdatePatient" styleClass="button-secondary"/>
+                <Button text="Clear/New" onAction="#handleClearPatient" style="-fx-background-color: #95a5a6;"/>
+                <Button text="Delete" onAction="#handleDeletePatient" style="-fx-background-color: #e74c3c;"/>
+            </HBox>
+        </VBox>
+    </HBox>
+    <TableView fx:id="pTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="pNameCol" text="Name" prefWidth="200"/>
+            <TableColumn fx:id="pAgeCol" text="Age" prefWidth="100"/>
+            <TableColumn fx:id="pPhoneCol" text="Phone" prefWidth="200"/>
+        </columns>
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy>
+    </TableView>
+</VBox>
